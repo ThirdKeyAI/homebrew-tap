@@ -5,13 +5,10 @@ class Symbi < Formula
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/thirdkeyai/symbiont/releases/download/v#{version}/symbi-v#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "PLACEHOLDER_ARM64_SHA256"
-    else
-      url "https://github.com/thirdkeyai/symbiont/releases/download/v#{version}/symbi-v#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "PLACEHOLDER_AMD64_SHA256"
-    end
+    # Only Apple Silicon (ARM) is supported via pre-built binaries.
+    # Intel Mac users: cargo install symbi
+    url "https://github.com/thirdkeyai/symbiont/releases/download/v#{version}/symbi-v#{version}-aarch64-apple-darwin.tar.gz"
+    sha256 "PLACEHOLDER_ARM64_SHA256"
   end
 
   on_linux do
