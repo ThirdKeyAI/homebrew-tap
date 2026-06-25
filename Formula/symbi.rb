@@ -1,23 +1,23 @@
 class Symbi < Formula
   desc "Autonomous agent runtime with DSL, toolchain, and reasoning loop"
   homepage "https://symbiont.dev"
-  version "1.15.2"
+  version "1.16.0"
   license "Apache-2.0"
 
   on_macos do
     # Only Apple Silicon (ARM) is supported via pre-built binaries.
     # Intel Mac users: cargo install symbi
     url "https://github.com/thirdkeyai/symbiont/releases/download/v#{version}/symbi-v#{version}-aarch64-apple-darwin.tar.gz"
-    sha256 "f7941e48ab4b4e06e6a366270b46d60d4320364445fa6eef37b50c508b3c2bdc"
+    sha256 "590758dc5fcff4a19a3ce7da742e46f0b996bc2d18391db4e8000f8126a959e4"
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/thirdkeyai/symbiont/releases/download/v#{version}/symbi-v#{version}-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "aaa92dd58c7d3edff84bfa12549c0910d38bf0ae286e1b6f68eb8b61e77feeed"
+      sha256 "5a6d07cd73caf73461567e76b9664eb47d08f1cd6fe76890ffbebb8bcbea6148"
     else
       url "https://github.com/thirdkeyai/symbiont/releases/download/v#{version}/symbi-v#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "0ca81a8f7ceea1e5cc67b07d38537de6b35b7e09fdf619f0f10ed3cfa0988911"
+      sha256 "1cda9c4a72c6708aff10b10c948a1f85602a21a53748bc77e9f9fb323ba8fae1"
     end
   end
 
